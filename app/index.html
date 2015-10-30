@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-mocks.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <div class="container">
+        <p>Test your filter, directive and factory here</p>
+        <h2>Test Filter</h2>
+        <div class="col-sm-12" ng-controller="Controller as ctrl"> 
+            <div class="col-sm-3">
+                <input type="text" class="form-control input-sm chat-input" placeholder="firstname" ng-model="ctrl.person.firstName" />
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control input-sm chat-input" placeholder="lastname" ng-model="ctrl.person.lastName" />
+            </div>
+            <div class="col-sm-3">
+                <input type="submit" class="btn btn-primary" value="Submit" ng-click="ctrl.showPerson = true"/>
+            </div>
+            <div ng-show="ctrl.showPerson" class="col-sm-3">
+                <p>{{ctrl.person | name}}<p>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <hr/>
+        </div>
+        <h2>Test Directive</h2>
+        <div login-form></div>
+        <div class="col-sm-12">
+            <hr/>
+        </div>
+        <h2>Test Factory</h2>
+        <div class="col-sm-12" ng-controller="Controller as ctrl"> 
+            <div class="col-sm-12">
+                <div class="col-sm-3">
+                    <input type="text" class="form-control input-sm chat-input" placeholder="TitleCase" ng-model="ctrl.titleCase" />
+                </div>
+                <div class="col-sm-3">
+                    <input type="submit" class="btn btn-primary" value="Submit" ng-click="ctrl.showTitleCase = true"/>
+                </div>
+                <div ng-show="ctrl.showTitleCase" class="col-sm-3">
+                    <p>{{ctrl.TitleCase()}}</p>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-3">
+                    <input type="text" class="form-control input-sm chat-input" placeholder="CamelCase" ng-model="ctrl.camelCase" />
+                </div>
+                <div class="col-sm-3">
+                    <input type="submit" class="btn btn-primary" value="Submit" ng-click="ctrl.showCamelCase = true"/>
+                </div>
+                <div ng-show="ctrl.showCamelCase" class="col-sm-3">
+                    <p>{{ctrl.CamelCase()}}</p>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-3">
+                    <input type="text" class="form-control input-sm chat-input" placeholder="DashCase" ng-model="ctrl.dashCase" />
+                </div>
+                <div class="col-sm-3">
+                    <input type="submit" class="btn btn-primary" value="Submit" ng-click="ctrl.showDashCase = true"/>
+                </div>
+                <div ng-show="ctrl.showDashCase" class="col-sm-3">
+                    <p>{{ctrl.DashCase()}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <hr/>
+        </div>
+        
+    </div>
+</body>
+</html>
